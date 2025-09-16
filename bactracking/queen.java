@@ -19,6 +19,27 @@ public class queen {
         }
     }
 
+    public static boolean nqueenOne(char board[][], int row) {
+        if (row == board.length) {
+            System.out.println("---------board-----------");
+            printBoard(board);
+
+            return true;
+        }
+
+        for (int j = 0; j < board.length; j++) {
+            if (isSafe(board, row, j)) {
+                board[row][j] = 'Q';
+                if (nqueenOne(board, row + 1)) {
+                    return true;
+                }
+                board[row][j] = 'X';
+            }
+
+        }
+        return false;
+    }
+
     public static void printBoard(char board[][]) {
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[0].length; j++) {
