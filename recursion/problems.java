@@ -43,7 +43,7 @@ public class problems {
         return s;
     }
 
-    // factorial of a number
+    // fibonacci series
 
     public static int fibo(int n) {
         if (n == 0 || n == 1) {
@@ -51,6 +51,28 @@ public class problems {
         }
         int f = fibo(n - 1) + fibo(n - 2);
         return f;
+    }
+
+    // pallidrome of a array
+    public static boolean pallidrome(int arr[], int start, int end) {
+        if (start >= end) {
+            return true;
+        }
+
+        if (arr[start] != arr[end]) {
+            return false;
+        }
+
+        return pallidrome(arr, start + 1, end - 1);
+    }
+
+    // reverse a string using recursion
+    public static StringBuilder revStr(String str, StringBuilder strRev, int idx) {
+        if (idx < 0) {
+            return strRev;
+        }
+
+        return revStr(str, strRev.append(str.charAt(idx)), idx - 1);
     }
 
     // 1st occurrence of the a number in the array
@@ -129,6 +151,11 @@ public class problems {
         // System.out.println(lastOccur(arr, 78, 0));
 
         // System.out.println(raisePow(2, 10));
-        System.out.println(raisePower(2, 5));
+        // System.out.println(raisePower(2, 5));
+        // int arr[] = { 1, 2, 3, 1 };
+        // System.out.println(pallidrome(arr, 0, arr.length - 1));
+        String str = "abcd";
+        StringBuilder rev = new StringBuilder();
+        System.out.println(revStr(str, rev, str.length() - 1));
     }
 }
