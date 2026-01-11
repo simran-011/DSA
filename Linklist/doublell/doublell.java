@@ -87,6 +87,26 @@ public class doublell {
         head = prev;
     }
 
+    public Node deleteNode(Node head) {
+        if(head == null && head.next == null) {
+            return null;
+        }
+
+        Node prevTemp = null;
+        Node temp = head;
+        while(temp.next != null) {
+            prevTemp = temp;
+            temp = temp.next;
+        }
+
+        prevTemp.next = null;
+        temp.prev = null;
+
+        return head;
+
+
+    }
+
     public static void main(String[] args) {
         doublell dll = new doublell();
         dll.addFirst(1);
