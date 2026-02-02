@@ -125,6 +125,20 @@ public class Intro {
 
         }
 
+        public static void kthLevel(Node root, int level, int k) {
+            if (root == null) {
+                return;
+            }
+
+            if (level == k) {
+                System.out.println(root.data);
+                return;
+            }
+
+            kthLevel(root.left, level + 1, k);
+            kthLevel(root.right, level + 1, k);
+        }
+
     }
 
     public static void main(String[] args) {
@@ -142,7 +156,9 @@ public class Intro {
 
         // System.out.println(BinaryTree.height(root));
 
-        System.out.println(BinaryTree.diameter(root).diam);
+        // System.out.println(BinaryTree.diameter(root).diam);
+
+        BinaryTree.kthLevel(root, 1, 3);
 
     }
 }

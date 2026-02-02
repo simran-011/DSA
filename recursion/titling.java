@@ -1,4 +1,3 @@
-package recursion;
 
 public class titling {
     public static int tiling(int n) {

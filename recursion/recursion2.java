@@ -1,4 +1,3 @@
-package recursion;
 
 public class recursion2 {
     public static void removeDuplicate(String str, int idx, StringBuilder newStr, boolean map[]) {
